@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2a3f61 transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #2a3f61;
+  border-radius: 999px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #3a5378;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  @apply bg-ink-950 font-sans text-mist-200 antialiased;
+  min-height: 100vh;
+  background-image:
+    radial-gradient(circle at 85% -10%, rgba(37, 99, 235, 0.1), transparent 35%),
+    radial-gradient(circle at 5% 5%, rgba(225, 29, 46, 0.06), transparent 30%);
+  background-attachment: fixed;
+}
+
+::selection {
+  background: rgba(225, 29, 46, 0.4);
+  color: #fff;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  margin: 0;
+}
+
+input[type='date']::-webkit-calendar-picker-indicator,
+input[type='datetime-local']::-webkit-calendar-picker-indicator,
+input[type='color']::-webkit-color-swatch-wrapper {
+  opacity: 0.65;
+  filter: invert(1);
+}
+
+input[type='color'] {
+  padding: 2px;
+  cursor: pointer;
+}
+
+.court-lines {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+  background-size: 52px 52px;
+  mask-image: linear-gradient(to right, black, transparent 82%);
+}
+
+.court-arc {
+  background:
+    radial-gradient(circle at 82% 50%, transparent 0 118px, rgba(255, 255, 255, 0.08) 119px 120px, transparent 121px),
+    radial-gradient(circle at 82% 50%, transparent 0 54px, rgba(255, 255, 255, 0.07) 55px 56px, transparent 57px);
+}
+
+.text-outline {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.22);
+  color: transparent;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.table-scroll {
+  scrollbar-width: thin;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
